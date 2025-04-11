@@ -36,14 +36,15 @@
 
 ### Main Interface
 
-![Preview](.\faceglow\static\faceglow\Images\Mainpage.png)
+![Preview](faceglow/static/faceglow/Images/Mainpage.png)
+
 
 
 ### Image Processing Interface
 
-![Preview](.\faceglow\static\faceglow\Images\Processing.png)
+![Preview](faceglow/static/faceglow/Images/Processing.png)
 
 
 ### Final Output Interface
 
-![Preview](.\faceglow\static\faceglow\Images\Show_Result.png)
+![Preview](faceglow/static/faceglow/Images/Show_Result.png)

@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    <title>Face Glow AI</title>
+    <link rel="stylesheet" href="{% static 'faceglow/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-header">
+        <h1>Face Glow AI</h1>
+    </div>
+    <div class="container">
+        <div class="demo-section">
+            <div class="demo-image-container">
+                <img src="{% static 'faceglow/Images/Result.png' %}" class="demo-image" alt="Demo enhanced image">
+
+            </div>
+            <div class="demo-text">
+                <h2>Transform Your Images with AI Magic</h2>
+                <p>Experience professional-grade image enhancement powered by cutting-edge AI technology</p>
+                <p class="highlight">✨ 100% Free! No sign-up required</p>
+            </div>
+        </div>
+
+        <div class="main-section">
+            <div class="upload-container" id="uploadContainer">
+                <div class="upload-box" id="uploadBox">
+                    <input type="file" id="imageInput" accept="image/*" hidden>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <h3>Drop your image here</h3>
+                    <p>or <span class="browse-btn">browse files</span></p>
+                </div>
+            </div>
+
+            <div class="progress-container" id="progressContainer" style="display: none;">
+                <div class="progress-steps">
+                    <div class="step active">
+                        <div class="step-icon">📤</div>
+                        <p>Uploading image...</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">🔍</div>
+                        <p>Analyzing image...</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">🖼️</div>
+                        <p>Removing Noise...</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">✨</div>
+                        <p>Enhancing details...</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">🎨</div>
+                        <p>Finalizing...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-container" id="resultContainer" style="display: none;">
+                <div class="image-comparison">
+                    <div class="comparison-slider">
+                        <img class="original-image" id="originalImage">
+                        <img class="enhanced-image" id="enhancedImage">
+                        <div class="slider-handle"></div>
+                        <div class="slider-line"></div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="download-btn" id="downloadBtn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Download Enhanced Image
+                    </button>
+                    <button class="new-image-btn" id="newImageBtn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                        Enhance New Image
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'faceglow/script.js' %}"></script>
+</body>
+</html>
